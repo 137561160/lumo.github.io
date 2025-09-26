@@ -1,0 +1,5 @@
+NEW_FILE_CODE
+User-agent: *
+Allow: /
+
+Sitemap: https://partcnc.cn/sitemap.xml

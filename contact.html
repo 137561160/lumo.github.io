@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | PartCNC</title>
     <meta name="description" content="Get in touch with PartCNC for CNC machining services. Request a quote or consultation with our engineering team.">
-    <meta name="keywords" content="CNC machining contact, precision manufacturing quote, custom CNC parts">
-    <meta name="author" content="PartCNC">
     <style>
         * {
             margin: 0;
@@ -65,6 +63,20 @@
         
         .nav-links a:hover {
             color: #3498db;
+        }
+        
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
         }
         
         .hero {
@@ -218,11 +230,48 @@
         
         @media (max-width: 768px) {
             .nav-links {
-                display: none;
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: #2c3e50;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                padding: 2rem 0;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 1rem 0;
+            }
+            
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .menu-toggle.active span:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            
+            .menu-toggle.active span:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
             }
             
             .contact-wrapper {
                 flex-direction: column;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
             }
         }
     </style>
@@ -241,6 +290,11 @@
                     <li><a href="blog.html">Blog</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </nav>
         </div>
     </header>
@@ -267,8 +321,8 @@
                     <div class="info-card">
                         <h3>Contact Information</h3>
                         <ul class="contact-details">
-                            <li><strong>Email:</strong> info@partcnc.cn</li>
-                            <li><strong>Phone:</strong> +86 123 4567 8900</li>
+                            <li><strong>Email:</strong> <a href="mailto:info@partcnc.cn" style="color: #3498db;">info@partcnc.cn</a></li>
+                            <li><strong>Phone:</strong> <a href="tel:+8612345678900" style="color: #3498db;">+86 123 4567 8900</a></li>
                             <li><strong>Address:</strong> Industrial Zone, Shanghai, China</li>
                             <li><strong>Hours:</strong> Mon-Fri: 8:00 AM - 6:00 PM</li>
                         </ul>
@@ -280,6 +334,7 @@
                         <p>• STEP, IGES, STL formats accepted</p>
                         <p>• PDF drawings also welcome</p>
                         <p>• Our engineers will review and contact you within 24 hours</p>
+                        <p><a href="mailto:info@partcnc.cn?subject=CAD%20File%20Submission&body=Please%20find%20attached%20my%20CAD%20files%20for%20quotation." class="btn" style="text-decoration: none; display: inline-block; margin-top: 10px;">Send via Email</a></p>
                     </div>
                 </div>
                 
@@ -290,7 +345,8 @@
                     <div id="formError" class="form-error">
                         There was an error submitting your form. Please try again.
                     </div>
-                    <form id="inquiryForm">
+                    <!-- Formspree Form -->
+                    <form id="inquiryForm" action="https://formspree.io/f/xqayajqq" method="POST">
                         <div class="form-group">
                             <label for="name">Full Name *</label>
                             <input type="text" id="name" name="name" required>
@@ -346,12 +402,6 @@
                             <textarea id="message" name="message" placeholder="Please describe your project requirements, including dimensions, tolerances, and any special requirements" required></textarea>
                         </div>
                         
-                        <div class="form-group">
-                            <label for="files">Upload Files (Optional)</label>
-                            <input type="file" id="files" name="files" multiple>
-                            <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">Accepted formats: PDF, STEP, IGES, STL (Max 10MB)</p>
-                        </div>
-                        
                         <button type="submit" class="btn">Submit Inquiry</button>
                     </form>
                 </div>
@@ -372,33 +422,29 @@
     </footer>
     
     <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenu.addEventListener('click', function() {
+            mobileMenu.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Handle form submission
         document.getElementById('inquiryForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Simple form validation
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const service = document.getElementById('service').value;
-            const message = document.getElementById('message').value;
-            
-            if (!name || !email || !service || !message) {
-                document.getElementById('formError').style.display = 'block';
-                document.getElementById('formSuccess').style.display = 'none';
-                return;
-            }
-            
-            // In a real implementation, you would send the form data to a server here
-            // For now, we'll just show the success message
-            document.getElementById('formSuccess').style.display = 'block';
-            document.getElementById('formError').style.display = 'none';
-            
-            // Reset form
-            this.reset();
-            
-            // Hide success message after 5 seconds
+            // Show success message after form submission
             setTimeout(() => {
-                document.getElementById('formSuccess').style.display = 'none';
-            }, 5000);
+                document.getElementById('formSuccess').style.display = 'block';
+                document.getElementById('formError').style.display = 'none';
+            }, 1000);
         });
     </script>
 </body>
