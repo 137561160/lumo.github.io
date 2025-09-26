@@ -151,33 +151,6 @@
             display: inline-block;
         }
         
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-            color: #2c3e50;
-        }
-        
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-family: inherit;
-            font-size: 1rem;
-        }
-        
-        .form-group textarea {
-            height: 150px;
-            resize: vertical;
-        }
-        
         .btn {
             background: #3498db;
             color: white;
@@ -185,40 +158,50 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            text-decoration: none;
             font-size: 1.1rem;
             transition: background 0.3s;
+            display: inline-block;
+            margin-top: 10px;
         }
         
         .btn:hover {
             background: #2980b9;
         }
         
+        .quote-info {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 5px;
+            margin-bottom: 2rem;
+        }
+        
+        .quote-info h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .quote-info ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .quote-info li {
+            margin-bottom: 0.5rem;
+        }
+        
         .map {
-            height: 300px;
-            background: #eee;
+            height: 400px;
             margin-top: 2rem;
             border-radius: 5px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         }
         
-        .form-success {
-            background: #d4edda;
-            color: #155724;
-            padding: 1rem;
-            border-radius: 5px;
-            margin-bottom: 1rem;
-            display: none;
-        }
-        
-        .form-error {
-            background: #f8d7da;
-            color: #721c24;
-            padding: 1rem;
-            border-radius: 5px;
-            margin-bottom: 1rem;
-            display: none;
+        .map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
         
         footer {
@@ -321,9 +304,10 @@
                     <div class="info-card">
                         <h3>Contact Information</h3>
                         <ul class="contact-details">
+                            <li><strong>Company:</strong> <a style="color: #3498db;">Part CNC Shop</a></li>
                             <li><strong>Email:</strong> <a href="mailto:info@partcnc.cn" style="color: #3498db;">info@partcnc.cn</a></li>
-                            <li><strong>Phone:</strong> <a href="tel:+8612345678900" style="color: #3498db;">+86 123 4567 8900</a></li>
-                            <li><strong>Address:</strong> Industrial Zone, Shanghai, China</li>
+                            <li><strong>Phone:</strong> <a href="tel:+8612345678900" style="color: #3498db;">+86 177 7327 7802</a></li>
+                            <li><strong>Address:</strong> 4 F, Building A, 5th Factory district, Fuzhu 3rd Street, Zhangyang, Zhangmutou Town, Dongguan, Guangdong, China 523000</li>
                             <li><strong>Hours:</strong> Mon-Fri: 8:00 AM - 6:00 PM</li>
                         </ul>
                     </div>
@@ -334,81 +318,41 @@
                         <p>• STEP, IGES, STL formats accepted</p>
                         <p>• PDF drawings also welcome</p>
                         <p>• Our engineers will review and contact you within 24 hours</p>
-                        <p><a href="mailto:info@partcnc.cn?subject=CAD%20File%20Submission&body=Please%20find%20attached%20my%20CAD%20files%20for%20quotation." class="btn" style="text-decoration: none; display: inline-block; margin-top: 10px;">Send via Email</a></p>
+                        <p><a href="mailto:info@partcnc.cn?subject=CAD%20File%20Submission&body=Please%20find%20attached%20my%20CAD%20files%20for%20quotation." class="btn">Send via Email</a></p>
                     </div>
                 </div>
                 
                 <div class="contact-form">
-                    <div id="formSuccess" class="form-success">
-                        Thank you for your inquiry! Our team will contact you within 24 hours.
+                    <div class="quote-info">
+                        <h3>Request a Quote</h3>
+                        <p>To receive an accurate quotation for your CNC machining project, please provide the following information:</p>
+                        <ul>
+                            <li><strong>Drawings or Models:</strong> 2D/3D CAD files (STEP, IGES, STL) or PDF drawings with dimensions</li>
+                            <li><strong>Material Requirements:</strong> Specify material type (e.g., Aluminum 6061, Stainless Steel 304, etc.)</li>
+                            <li><strong>Quantity:</strong> Estimated annual quantity or batch size</li>
+                            <li><strong>Tolerances:</strong> Required dimensional and geometric tolerances</li>
+                            <li><strong>Surface Finish:</strong> Desired surface roughness or finishing requirements</li>
+                            <li><strong>Special Requirements:</strong> Heat treatment, plating, coating, or other post-processing needs</li>
+                        </ul>
+                        <p>Once we receive your information, our engineering team will review your requirements and provide a detailed quotation within 24 hours.</p>
+                        <a href="mailto:info@partcnc.cn?subject=Quotation%20Request&body=Please%20find%20attached%20my%20project%20details%20for%20quotation." class="btn">Request Quote via Email</a>
                     </div>
-                    <div id="formError" class="form-error">
-                        There was an error submitting your form. Please try again.
+                    
+                    <div class="quote-info">
+                        <h3>Our Capabilities</h3>
+                        <ul>
+                            <li><strong>Processing Methods:</strong> CNC Milling, CNC Turning, Grinding, EDM</li>
+                            <li><strong>Materials:</strong> Aluminum, Steel, Stainless Steel, Titanium, Plastics</li>
+                            <li><strong>Tolerance:</strong> ±0.005mm (Standard), ±0.002mm (Precision)</li>
+                            <li><strong>Surface Roughness:</strong> Ra 0.4μm (Standard), Ra 0.4μm (Precision)</li>
+                            <li><strong>Maximum Part Size:</strong> 800mm x 500mm x 400mm</li>
+                        </ul>
                     </div>
-                    <!-- Formspree Form -->
-                    <form id="inquiryForm" action="https://formspree.io/f/xqayajqq" method="POST">
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="company">Company Name</label>
-                            <input type="text" id="company" name="company">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="service">Service Required *</label>
-                            <select id="service" name="service" required>
-                                <option value="">Select a service</option>
-                                <option value="5-axis">5-Axis CNC Machining</option>
-                                <option value="turning">CNC Turning</option>
-                                <option value="milling">CNC Milling</option>
-                                <option value="grinding">Grinding Services</option>
-                                <option value="other">Other Services</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="material">Primary Material</label>
-                            <select id="material" name="material">
-                                <option value="">Select material (optional)</option>
-                                <option value="aluminum">Aluminum</option>
-                                <option value="steel">Steel</option>
-                                <option value="stainless">Stainless Steel</option>
-                                <option value="titanium">Titanium</option>
-                                <option value="plastic">Plastic</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="quantity">Estimated Annual Quantity</label>
-                            <input type="number" id="quantity" name="quantity" min="1">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Project Details *</label>
-                            <textarea id="message" name="message" placeholder="Please describe your project requirements, including dimensions, tolerances, and any special requirements" required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn">Submit Inquiry</button>
-                    </form>
                 </div>
             </div>
             
             <div class="map">
-                <p>Company Location Map</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3847.070700!2d114.088639!3d22.870700!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDUyJzE0LjUiTiAxMTPCsDA1JzE5LjEiRQ!5e0!3m2!1sen!2s!4v1234567890123!5m2!1sen!2s" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </section>
@@ -436,15 +380,6 @@
                 mobileMenu.classList.remove('active');
                 navLinks.classList.remove('active');
             });
-        });
-        
-        // Handle form submission
-        document.getElementById('inquiryForm').addEventListener('submit', function(e) {
-            // Show success message after form submission
-            setTimeout(() => {
-                document.getElementById('formSuccess').style.display = 'block';
-                document.getElementById('formError').style.display = 'none';
-            }, 1000);
         });
     </script>
 </body>
