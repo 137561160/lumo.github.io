@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Studies | PartCNC</title>
+    <meta name="description" content="Explore our successful CNC machining projects across automotive, medical, and aerospace industries. See how we solved complex manufacturing challenges.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #3498db;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3') no-repeat center center/cover;
+            height: 60vh;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .case-card {
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .case-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .case-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .case-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .case-card:hover .case-image img {
+            transform: scale(1.1);
+        }
+        
+        .case-content {
+            padding: 1.5rem;
+        }
+        
+        .case-content h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .case-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .case-details {
+            margin-top: 2rem;
+        }
+        
+        .case-details h4 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        
+        .case-details p {
+            margin-bottom: 1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: background 0.3s;
+            margin-top: 1rem;
+        }
+        
+        .btn:hover {
+            background: #2980b9;
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">PartCNC</div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="cases.html">Case Studies</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Case Studies</h1>
+                <p>Explore how we've helped global manufacturers overcome complex machining challenges</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cases Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Success Stories</h2>
+                <p>Real-world examples of our precision CNC machining solutions</p>
+            </div>
+            <div class="cases-grid">
+                <div class="case-card">
+                    <div class="case-image">
+                        <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3" alt="Automotive Case Study">
+                    </div>
+                    <div class="case-content">
+                        <h3>Automotive Engine Component</h3>
+                        <div class="case-meta">
+                            <span>Industry: Automotive</span>
+                            <span>Tolerance: ±0.005mm</span>
+                        </div>
+                        <div class="case-details">
+                            <h4>Challenge</h4>
+                            <p>Global TOP3 automotive brand required complex engine components with tight tolerances and challenging material (Inconel 718).</p>
+                            
+                            <h4>Solution</h4>
+                            <p>Utilized our 5-axis machining centers with specialized tooling and custom fixtures to achieve required precision.</p>
+                            
+                            <h4>Results</h4>
+                            <p>Delivered 10,000+ parts with 99.97% quality compliance and 20% faster delivery than competition.</p>
+                        </div>
+                        <a href="#" class="btn">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="case-card">
+                    <div class="case-image">
+                        <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3" alt="Medical Case Study">
+                    </div>
+                    <div class="case-content">
+                        <h3>Medical Implant Device</h3>
+                        <div class="case-meta">
+                            <span>Industry: Medical</span>
+                            <span>Tolerance: ±0.003mm</span>
+                        </div>
+                        <div class="case-details">
+                            <h4>Challenge</h4>
+                            <p>Medical device manufacturer needed implant components with biocompatible titanium alloy and ultra-precision surface finish.</p>
+                            
+                            <h4>Solution</h4>
+                            <p>Implemented ISO 13485 compliant processes with specialized cleaning and quality inspection protocols.</p>
+                            
+                            <h4>Results</h4>
+                            <p>Achieved Ra 0.2μm surface finish and 100% quality compliance for 5000+ components.</p>
+                        </div>
+                        <a href="#" class="btn">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="case-card">
+                    <div class="case-image">
+                        <img src="https://images.unsplash.com/photo-1556157382-97eda2f9e946?ixlib=rb-4.0.3" alt="Aerospace Case Study">
+                    </div>
+                    <div class="case-content">
+                        <h3>Aerospace Fuel System Component</h3>
+                        <div class="case-meta">
+                            <span>Industry: Aerospace</span>
+                            <span>Tolerance: ±0.002mm</span>
+                        </div>
+                        <div class="case-details">
+                            <h4>Challenge</h4>
+                            <p>Aerospace supplier required complex fuel system components with extremely tight tolerances and zero-defect quality.</p>
+                            
+                            <h4>Solution</h4>
+                            <p>Used our AS9100D certified processes with 100% CMM inspection and detailed documentation.</p>
+                            
+                            <h4>Results</h4>
+                            <p>Delivered 15,000+ parts with zero defects and became approved supplier for 5+ years.</p>
+                        </div>
+                        <a href="#" class="btn">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section" style="background: #f8f9fa;">
+        <div class="container" style="text-align: center;">
+            <h2>Have a Challenging Project?</h2>
+            <p style="margin-bottom: 2rem;">Our engineering team is ready to develop a custom solution for your specific requirements.</p>
+            <a href="contact.html" class="btn">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 PartCNC. All rights reserved.</p>
+            <p>High Precision CNC Machining Services | <a href="mailto:info@partcnc.cn" style="color: #3498db;">info@partcnc.cn</a></p>
+        </div>
+    </footer>
+</body>
+</html>

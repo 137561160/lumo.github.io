@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | PartCNC</title>
+    <meta name="description" content="Comprehensive CNC machining services including 5-axis machining, turning, milling, and grinding for automotive, medical, and aerospace industries.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #3498db;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3') no-repeat center center/cover;
+            height: 60vh;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .service-card:hover .service-image img {
+            transform: scale(1.1);
+        }
+        
+        .service-content {
+            padding: 1.5rem;
+        }
+        
+        .service-content h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .capabilities {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .capability {
+            flex: 0 0 48%;
+            margin-bottom: 1rem;
+        }
+        
+        .capability h4 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .capability {
+                flex: 0 0 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">PartCNC</div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="cases.html">Case Studies</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Our CNC Machining Services</h1>
+                <p>Comprehensive precision machining solutions for diverse industries</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Specialized Services</h2>
+                <p>Advanced CNC machining capabilities across multiple processes and materials</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3" alt="5-Axis Machining">
+                    </div>
+                    <div class="service-content">
+                        <h3>5-Axis CNC Machining</h3>
+                        <p>Complex geometries with exceptional precision using our advanced 5-axis machining centers. Ideal for aerospace and medical components requiring intricate features.</p>
+                        <p><strong>Tolerance:</strong> ±0.005mm</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3" alt="CNC Turning">
+                    </div>
+                    <div class="service-content">
+                        <h3>CNC Turning</h3>
+                        <p>Precision turning services for cylindrical parts with excellent surface finishes. Capable of handling various materials from aluminum to hardened steel.</p>
+                        <p><strong>Tolerance:</strong> ±0.01mm</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1556157382-97eda2d23cbdf?ixlib=rb-4.0.3" alt="Milling">
+                    </div>
+                    <div class="service-content">
+                        <h3>CNC Milling</h3>
+                        <p>High-precision milling for complex 2D and 3D shapes. Multi-axis capabilities for intricate features and tight tolerances.</p>
+                        <p><strong>Tolerance:</strong> ±0.01mm</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Capabilities Section -->
+    <section class="section" style="background: #f8f9fa;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Technical Capabilities</h2>
+                <p>Our manufacturing capabilities and material expertise</p>
+            </div>
+            <div class="capabilities">
+                <div class="capability">
+                    <h4>Materials Expertise</h4>
+                    <p>• Aluminum alloys (6061, 7075, 2024)</p>
+                    <p>• Stainless steel (304, 316, 17-4PH)</p>
+                    <p>• Carbon steel and alloy steel</p>
+                    <p>• Titanium alloys</p>
+                    <p>• Plastics (PEEK, PTFE, Delrin)</p>
+                </div>
+                
+                <div class="capability">
+                    <h4>Dimensional Capabilities</h4>
+                    <p>• Minimum tolerance: ±0.005mm</p>
+                    <p>• Maximum part size: 800mm x 500mm x 400mm</p>
+                    <p>• Surface finish: Ra 0.4μm</p>
+                    <p>• Repeatability: ±0.002mm</p>
+                </div>
+                
+                <div class="capability">
+                    <h4>Quality Inspection</h4>
+                    <p>• CMM inspection</p>
+                    <p>• Vision measuring systems</p>
+                    <p>• Surface roughness testing</p>
+                    <p>• Material certification</p>
+                </div>
+                
+                <div class="capability">
+                    <h4>Finishing Options</h4>
+                    <p>• Anodizing</p>
+                    <p>• Plating (Zinc, Nickel)</p>
+                    <p>• Passivation</p>
+                    <p>• Sandblasting</p>
+                    <p>• Polishing</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section">
+        <div class="container" style="text-align: center;">
+            <h2>Need Custom Machining Solutions?</h2>
+            <p style="margin-bottom: 2rem;">Our engineering team is ready to help with your specific requirements.</p>
+            <a href="contact.html" class="btn" style="background: #3498db; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px;">Request a Quote</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 PartCNC. All rights reserved.</p>
+            <p>High Precision CNC Machining Services | <a href="mailto:info@partcnc.cn" style="color: #3498db;">info@partcnc.cn</a></p>
+        </div>
+    </footer>
+</body>
+</html>
