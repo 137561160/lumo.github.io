@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precision Tag | PartCNC Blog</title>
+    <meta name="description" content="Articles tagged with Precision. Explore our insights on precision manufacturing and CNC technology.">
+    <meta name="keywords" content="precision manufacturing, CNC precision, machining accuracy">
+    <link rel="canonical" href="https://www.partcnc.cn/tag-precision.html">
+    
+    <meta property="og:title" content="Precision Tag | PartCNC Blog">
+    <meta property="og:description" content="Articles tagged with Precision. Explore our insights on precision manufacturing and CNC technology.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.partcnc.cn/tag-precision.html">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #3498db;
+        }
+        
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3') no-repeat center center/cover;
+            height: 60vh;
+            color: white;
+            display: flex;
+            align-items: center;
+            margin-top: 70px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .blog-wrapper {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .blog-posts {
+            flex: 2;
+        }
+        
+        .sidebar {
+            flex: 1;
+        }
+        
+        .post-card {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .post-card:last-child {
+            border-bottom: none;
+        }
+        
+        .post-image {
+            height: 300px;
+            overflow: hidden;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+        
+        .post-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .post-meta {
+            display: flex;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .post-meta span {
+            margin-right: 1rem;
+        }
+        
+        .post-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .post-card h3 a {
+            color: inherit;
+            text-decoration: none;
+        }
+        
+        .post-card h3 a:hover {
+            color: #3498db;
+        }
+        
+        .post-excerpt {
+            margin-bottom: 1rem;
+        }
+        
+        .read-more {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .read-more:hover {
+            text-decoration: underline;
+        }
+        
+        .sidebar-widget {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 5px;
+            margin-bottom: 2rem;
+        }
+        
+        .sidebar-widget h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .sidebar-widget ul {
+            list-style: none;
+        }
+        
+        .sidebar-widget li {
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .sidebar-widget li:last-child {
+            border-bottom: none;
+        }
+        
+        .sidebar-widget a {
+            color: #333;
+            text-decoration: none;
+        }
+        
+        .sidebar-widget a:hover {
+            color: #3498db;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .pagination a {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            margin: 0 0.25rem;
+            border: 1px solid #ddd;
+            text-decoration: none;
+            color: #333;
+        }
+        
+        .pagination a.active, .pagination a:hover {
+            background: #3498db;
+            color: white;
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: #2c3e50;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                padding: 2rem 0;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 1rem 0;
+            }
+            
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .menu-toggle.active span:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            
+            .menu-toggle.active span:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+            
+            .blog-wrapper {
+                flex-direction: column;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G5F3L6W2VW"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-G5F3L6W2VW');
+    </script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">PartCNC</div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="cases.html">Case Studies</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Articles tagged: Precision</h1>
+                <p>Explore our insights on precision manufacturing and CNC technology</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Tag: Precision</h2>
+            </div>
+            <div class="blog-wrapper">
+                <div class="blog-posts">
+                    <div class="post-card">
+                        <div class="post-image">
+                            <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3" alt="5-Axis Machining">
+                        </div>
+                        <div class="post-meta">
+                            <span>June 15, 2025</span>
+                            <span>Category: Technology</span>
+                        </div>
+                        <h3><a href="5-axis-cnc-machining-advantages.html">Advantages of 5-Axis CNC Machining for Complex Parts</a></h3>
+                        <div class="post-excerpt">
+                            <p>5-axis CNC machining offers significant advantages for manufacturing complex geometries in a single setup. This technology reduces production time, improves accuracy, and allows for more intricate designs...</p>
+                        </div>
+                        <a href="5-axis-cnc-machining-advantages.html" class="read-more">Read More</a>
+                    </div>
+                    
+                    <div class="post-card">
+                        <div class="post-image">
+                            <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3" alt="Quality Control">
+                        </div>
+                        <div class="post-meta">
+                            <span>May 28, 2025</span>
+                            <span>Category: Quality</span>
+                        </div>
+                        <h3><a href="iso-9001-quality-standards-cnc.html">Implementing ISO 9001:2015 Quality Standards in CNC Manufacturing</a></h3>
+                        <div class="post-excerpt">
+                            <p>Quality assurance is critical in precision manufacturing. Our implementation of ISO 9001:2015 standards ensures consistent quality delivery and continuous improvement in our CNC machining processes...</p>
+                        </div>
+                        <a href="iso-9001-quality-standards-cnc.html" class="read-more">Read More</a>
+                    </div>
+                    
+                    <div class="post-card">
+                        <div class="post-image">
+                            <img src="https://images.unsplash.com/photo-1556157382-97eda2f9e946?ixlib=rb-4.0.3" alt="Materials">
+                        </div>
+                        <div class="post-meta">
+                            <span>May 12, 2025</span>
+                            <span>Category: Materials</span>
+                        </div>
+                        <h3><a href="titanium-inconel-cnc-machining.html">Working with Advanced Materials: Titanium and Inconel Machining</a></h3>
+                        <div class="post-excerpt">
+                            <p>Titanium and Inconel alloys present unique challenges in CNC machining due to their strength and heat resistance. Our specialized techniques and tooling ensure optimal results with these demanding materials...</p>
+                        </div>
+                        <a href="titanium-inconel-cnc-machining.html" class="read-more">Read More</a>
+                    </div>
+                    
+                    <div class="post-card">
+                        <div class="post-meta">
+                            <span>April 30, 2025</span>
+                            <span>Category: Company News</span>
+                        </div>
+                        <h3><a href="partcnc-facility-expansion.html">PartCNC Expands Facility to Meet Growing Demand</a></h3>
+                        <div class="post-excerpt">
+                            <p>We're excited to announce the expansion of our manufacturing facility with 20 additional CNC machines and expanded warehouse space. This investment will allow us to serve more customers with faster turnaround times...</p>
+                        </div>
+                        <a href="partcnc-facility-expansion.html" class="read-more">Read More</a>
+                    </div>
+                    
+                    <div class="pagination">
+                        <a href="tag-precision.html" class="active">1</a>
+                        <a href="#">Next &raquo;</a>
+                    </div>
+                </div>
+                
+                <div class="sidebar">
+                    <div class="sidebar-widget">
+                        <h3>Categories</h3>
+                        <ul>
+                            <li><a href="blog-technology.html">Technology (12)</a></li>
+                            <li><a href="blog-quality-control.html">Quality Control (8)</a></li>
+                            <li><a href="blog-materials.html">Materials (15)</a></li>
+                            <li><a href="blog-industry-news.html">Industry News (7)</a></li>
+                            <li><a href="blog-company-news.html">Company News (5)</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3>Popular Posts</h3>
+                        <ul>
+                            <li><a href="cnc-machining-tolerances.html">Understanding CNC Machining Tolerances</a></li>
+                            <li><a href="5-axis-vs-3-plus-2-machining.html">5-Axis vs 3+2 Axis Machining</a></li>
+                            <li><a href="surface-finish-guide.html">Surface Finish Guide for CNC Parts</a></li>
+                            <li><a href="choosing-cnc-material.html">Choosing the Right CNC Material</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3>Tags</h3>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                            <a href="tag-cnc-machining.html" style="background: #eee; padding: 0.25rem 0.5rem; border-radius: 3px; text-decoration: none; color: #333; font-size: 0.9rem;">CNC Machining</a>
+                            <a href="tag-precision.html" style="background: #eee; padding: 0.25rem 0.5rem; border-radius: 3px; text-decoration: none; color: #333; font-size: 0.9rem;">Precision</a>
+                            <a href="tag-5-axis.html" style="background: #eee; padding: 0.25rem 0.5rem; border-radius: 3px; text-decoration: none; color: #333; font-size: 0.9rem;">5-Axis</a>
+                            <a href="tag-materials.html" style="background: #eee; padding: 0.25rem 0.5rem; border-radius: 3px; text-decoration: none; color: #333; font-size: 0.9rem;">Materials</a>
+                            <a href="tag-quality.html" style="background: #eee; padding: 0.25rem 0.5rem; border-radius: 3px; text-decoration: none; color: #333; font-size: 0.9rem;">Quality</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 PartCNC. All rights reserved.</p>
+            <p>High Precision CNC Machining Services | <a href="mailto:info@partcnc.cn" style="color: #3498db;">info@partcnc.cn</a></p>
+        </div>
+    </footer>
+    
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenu.addEventListener('click', function() {
+            mobileMenu.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
