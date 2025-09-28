@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | PartCNC</title>
-    <meta name="description" content="Learn about PartCNC's advanced CNC machining capabilities, quality certifications, and experienced engineering team.">
+    <title>Technology | PartCNC Blog</title>
+    <meta name="description" content="Explore our articles on CNC machining technology, including 5-axis machining, advanced manufacturing techniques, and industry innovations.">
     <style>
         * {
             margin: 0;
@@ -80,7 +80,7 @@
         }
         
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3') no-repeat center center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3') no-repeat center center/cover;
             height: 60vh;
             color: white;
             display: flex;
@@ -111,67 +111,157 @@
             margin-bottom: 1rem;
         }
         
-        .about-content {
+        .blog-wrapper {
             display: flex;
-            align-items: center;
             gap: 2rem;
-            margin-bottom: 3rem;
         }
         
-        .about-text {
+        .blog-posts {
+            flex: 2;
+        }
+        
+        .sidebar {
             flex: 1;
         }
         
-        .about-image {
-            flex: 1;
-            border-radius: 5px;
+        .post-card {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .post-card:last-child {
+            border-bottom: none;
+        }
+        
+        .post-image {
+            height: 300px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin-bottom: 1rem;
         }
         
-        .about-image img {
+        .post-image img {
             width: 100%;
-            height: auto;
-            display: block;
+            height: 100%;
+            object-fit: cover;
         }
         
-        .certifications {
+        .post-meta {
             display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .post-meta span {
+            margin-right: 1rem;
+        }
+        
+        .post-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .post-card h3 a {
+            color: inherit;
+            text-decoration: none;
+        }
+        
+        .post-card h3 a:hover {
+            color: #3498db;
+        }
+        
+        .post-excerpt {
+            margin-bottom: 1rem;
+        }
+        
+        .read-more {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .read-more:hover {
+            text-decoration: underline;
+        }
+        
+        .sidebar-widget {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 5px;
+            margin-bottom: 2rem;
+        }
+        
+        .sidebar-widget h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .sidebar-widget ul {
+            list-style: none;
+        }
+        
+        .sidebar-widget li {
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .sidebar-widget li:last-child {
+            border-bottom: none;
+        }
+        
+        .sidebar-widget a {
+            color: #333;
+            text-decoration: none;
+        }
+        
+        .sidebar-widget a:hover {
+            color: #3498db;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
             margin-top: 2rem;
         }
         
-        .cert-card {
-            flex: 0 0 30%;
-            text-align: center;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        .pagination a {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            margin: 0 0.25rem;
+            border: 1px solid #ddd;
+            text-decoration: none;
+            color: #333;
+        }
+        
+        .pagination a.active, .pagination a:hover {
+            background: #3498db;
+            color: white;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 12px 30px;
+            border: none;
             border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: background 0.3s;
+            margin-top: 1rem;
         }
         
-        .cert-card h3 {
-            margin: 1rem 0;
-            color: #2c3e50;
+        .btn:hover {
+            background: #2980b9;
         }
         
-        .team {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-        
-        .team-member {
-            flex: 0 0 22%;
+        .back-link {
             text-align: center;
-            margin-bottom: 2rem;
-        }
-        
-        .team-member img {
-            width: 100%;
-            border-radius: 50%;
-            margin-bottom: 1rem;
+            margin-top: 2rem;
         }
         
         footer {
@@ -219,12 +309,8 @@
                 transform: translateY(-8px) rotate(-45deg);
             }
             
-            .about-content {
+            .blog-wrapper {
                 flex-direction: column;
-            }
-            
-            .cert-card, .team-member {
-                flex: 0 0 100%;
             }
             
             .hero h1 {
@@ -269,82 +355,62 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>About PartCNC</h1>
-                <p>Professional CNC machining services with advanced equipment and quality control systems</p>
+                <h1>Technology</h1>
+                <p>Explore the latest in CNC machining technology and innovation</p>
             </div>
         </div>
     </section>
 
-    <!-- Company Info Section -->
+    <!-- Blog Section -->
     <section class="section">
         <div class="container">
             <div class="section-title">
-                <h2>Our Story</h2>
+                <h2>Articles in Technology</h2>
+                <p>Stay updated with the latest CNC machining technology trends</p>
             </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Founded in 2010, PartCNC has grown to become a leading provider of precision CNC machining services. With over a decade of experience, we serve clients across automotive, medical, aerospace, and industrial sectors.</p>
-                    <p>Our commitment to quality, precision, and innovation has made us a trusted partner for manufacturers worldwide. We combine advanced technology with skilled craftsmanship to deliver components that exceed expectations.</p>
-                    <p>Headquartered in China with ISO 9001:2015 certification, we maintain strict quality control processes throughout our manufacturing operations. Our facility houses over 50 advanced CNC machines capable of producing parts with tolerances as tight as ±0.005mm.</p>
+            <div class="blog-wrapper">
+                <div class="blog-posts">
+                    <div class="post-card">
+                        <div class="post-image">
+                            <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3" alt="5-Axis Machining">
+                        </div>
+                        <div class="post-meta">
+                            <span>June 15, 2025</span>
+                            <span>Category: Technology</span>
+                        </div>
+                        <h3><a href="5-axis-cnc-machining-advantages.html">Advantages of 5-Axis CNC Machining for Complex Parts</a></h3>
+                        <div class="post-excerpt">
+                            <p>5-axis CNC machining offers significant advantages for manufacturing complex geometries in a single setup. This technology reduces production time, improves accuracy, and allows for more intricate designs...</p>
+                        </div>
+                        <a href="5-axis-cnc-machining-advantages.html" class="read-more">Read More</a>
+                    </div>
+                    
+                    <div class="back-link">
+                        <a href="blog.html" class="btn">Back to Blog</a>
+                    </div>
                 </div>
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3" alt="Our Factory">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Certifications Section -->
-    <section class="section" style="background: #f8f9fa;">
-        <div class="container">
-            <div class="section-title">
-                <h2>Certifications & Quality</h2>
-                <p>Our commitment to excellence is backed by internationally recognized certifications</p>
-            </div>
-            <div class="certifications">
-                <div class="cert-card">
-                    <h3>ISO 9001:2015</h3>
-                    <p>Quality management systems certification for consistent quality delivery</p>
-                </div>
-                <div class="cert-card">
-                    <h3>AS9100D</h3>
-                    <p>Aerospace industry quality management certification</p>
-                </div>
-                <div class="cert-card">
-                    <h3>ISO 13485:2016</h3>
-                    <p>Medical device quality management systems certification</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Section -->
-    <section class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Engineering Team</h2>
-                <p>Experienced professionals with expertise in complex CNC machining projects</p>
-            </div>
-            <div class="team">
-                <div class="team-member">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3" alt="Team Member">
-                    <h3>Michael Chen</h3>
-                    <p>Chief Engineer</p>
-                </div>
-                <div class="team-member">
-                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3" alt="Team Member">
-                    <h3>David Liu</h3>
-                    <p>Quality Manager</p>
-                </div>
-                <div class="team-member">
-                    <img src="https://images.unsplash.com/photo-1556157382-97eda2f9e946?ixlib=rb-4.0.3" alt="Team Member">
-                    <h3>Sarah Zhang</h3>
-                    <p>Process Engineer</p>
-                </div>
-                <div class="team-member">
-                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3" alt="Team Member">
-                    <h3>James Wang</h3>
-                    <p>Production Manager</p>
+                
+                <div class="sidebar">
+                    <div class="sidebar-widget">
+                        <h3>Categories</h3>
+                        <ul>
+                            <li><a href="blog-technology.html">Technology (12)</a></li>
+                            <li><a href="blog-quality-control.html">Quality Control (8)</a></li>
+                            <li><a href="blog-materials.html">Materials (15)</a></li>
+                            <li><a href="blog-industry-news.html">Industry News (7)</a></li>
+                            <li><a href="blog-company-news.html">Company News (5)</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3>Popular Posts</h3>
+                        <ul>
+                            <li><a href="#">Understanding CNC Machining Tolerances</a></li>
+                            <li><a href="#">5-Axis vs 3+2 Axis Machining</a></li>
+                            <li><a href="#">Surface Finish Guide for CNC Parts</a></li>
+                            <li><a href="#">Choosing the Right CNC Material</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

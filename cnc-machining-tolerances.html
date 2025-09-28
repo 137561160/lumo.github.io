@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog | PartCNC</title>
-    <meta name="description" content="Insights on CNC machining technology, industry trends, and company news. Stay updated with the latest in precision manufacturing.">
+    <title>Understanding CNC Machining Tolerances | PartCNC Blog</title>
+    <meta name="description" content="Learn about CNC machining tolerances, how they affect part quality, and how to specify the right tolerances for your project.">
     <style>
         * {
             margin: 0;
@@ -80,7 +80,7 @@
         }
         
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3') no-repeat center center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3') no-repeat center center/cover;
             height: 60vh;
             color: white;
             display: flex;
@@ -111,79 +111,57 @@
             margin-bottom: 1rem;
         }
         
-        .blog-wrapper {
+        .post-details {
             display: flex;
+            flex-wrap: wrap;
             gap: 2rem;
+            margin-bottom: 3rem;
         }
         
-        .blog-posts {
+        .post-content {
             flex: 2;
-        }
-        
-        .sidebar {
-            flex: 1;
-        }
-        
-        .post-card {
-            margin-bottom: 2rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .post-card:last-child {
-            border-bottom: none;
-        }
-        
-        .post-image {
-            height: 300px;
-            overflow: hidden;
-            border-radius: 5px;
-            margin-bottom: 1rem;
-        }
-        
-        .post-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            min-width: 300px;
         }
         
         .post-meta {
             display: flex;
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-            color: #666;
+            margin-bottom: 2rem;
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 5px;
         }
         
-        .post-meta span {
-            margin-right: 1rem;
+        .meta-item {
+            flex: 1;
+            text-align: center;
         }
         
-        .post-card h3 {
+        .meta-item strong {
+            display: block;
             color: #2c3e50;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
         }
         
-        .post-card h3 a {
-            color: inherit;
-            text-decoration: none;
+        .post-content h3 {
+            color: #2c3e50;
+            margin: 2rem 0 1rem;
         }
         
-        .post-card h3 a:hover {
-            color: #3498db;
+        .post-content p {
+            margin-bottom: 1.5rem;
         }
         
-        .post-excerpt {
-            margin-bottom: 1rem;
+        .post-content ul, .post-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
         }
         
-        .read-more {
-            color: #3498db;
-            text-decoration: none;
-            font-weight: bold;
+        .post-content li {
+            margin-bottom: 0.5rem;
         }
         
-        .read-more:hover {
-            text-decoration: underline;
+        .sidebar {
+            flex: 1;
         }
         
         .sidebar-widget {
@@ -221,24 +199,27 @@
             color: #3498db;
         }
         
-        .pagination {
-            display: flex;
-            justify-content: center;
-            margin-top: 2rem;
-        }
-        
-        .pagination a {
+        .btn {
             display: inline-block;
-            padding: 0.5rem 1rem;
-            margin: 0 0.25rem;
-            border: 1px solid #ddd;
-            text-decoration: none;
-            color: #333;
-        }
-        
-        .pagination a.active, .pagination a:hover {
             background: #3498db;
             color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: background 0.3s;
+            margin-top: 1rem;
+        }
+        
+        .btn:hover {
+            background: #2980b9;
+        }
+        
+        .back-link {
+            text-align: center;
+            margin-top: 2rem;
         }
         
         footer {
@@ -286,12 +267,12 @@
                 transform: translateY(-8px) rotate(-45deg);
             }
             
-            .blog-wrapper {
-                flex-direction: column;
-            }
-            
             .hero h1 {
                 font-size: 2rem;
+            }
+            
+            .post-details {
+                flex-direction: column;
             }
         }
     </style>
@@ -332,82 +313,95 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>PartCNC Blog</h1>
-                <p>Insights on precision manufacturing, CNC technology, and industry trends</p>
+                <h1>Understanding CNC Machining Tolerances</h1>
+                <p>A comprehensive guide to precision in manufacturing</p>
             </div>
         </div>
     </section>
 
-    <!-- Blog Section -->
+    <!-- Blog Post Content -->
     <section class="section">
         <div class="container">
             <div class="section-title">
-                <h2>Latest Articles</h2>
-                <p>Stay updated with the latest in CNC machining technology and industry news</p>
+                <h2>Popular Articles</h2>
+                <p>Essential knowledge for CNC machining projects</p>
             </div>
-            <div class="blog-wrapper">
-                <div class="blog-posts">
-                    <div class="post-card">
-                        <div class="post-image">
-                            <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3" alt="5-Axis Machining">
+            
+            <div class="post-details">
+                <div class="post-content">
+                    <div class="post-meta">
+                        <div class="meta-item">
+                            <strong>Published</strong>
+                            <span>March 15, 2025</span>
                         </div>
-                        <div class="post-meta">
-                            <span>June 15, 2025</span>
-                            <span>Category: Technology</span>
+                        <div class="meta-item">
+                            <strong>Category</strong>
+                            <span>Technology</span>
                         </div>
-                        <h3><a href="5-axis-cnc-machining-advantages.html">Advantages of 5-Axis CNC Machining for Complex Parts</a></h3>
-                        <div class="post-excerpt">
-                            <p>5-axis CNC machining offers significant advantages for manufacturing complex geometries in a single setup. This technology reduces production time, improves accuracy, and allows for more intricate designs...</p>
+                        <div class="meta-item">
+                            <strong>Author</strong>
+                            <span>Engineering Team</span>
                         </div>
-                        <a href="5-axis-cnc-machining-advantages.html" class="read-more">Read More</a>
                     </div>
                     
-                    <div class="post-card">
-                        <div class="post-image">
-                            <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3" alt="Quality Control">
-                        </div>
-                        <div class="post-meta">
-                            <span>May 28, 2025</span>
-                            <span>Category: Quality</span>
-                        </div>
-                        <h3><a href="iso-9001-quality-standards-cnc.html">Implementing ISO 9001:2015 Quality Standards in CNC Manufacturing</a></h3>
-                        <div class="post-excerpt">
-                            <p>Quality assurance is critical in precision manufacturing. Our implementation of ISO 9001:2015 standards ensures consistent quality delivery and continuous improvement in our CNC machining processes...</p>
-                        </div>
-                        <a href="iso-9001-quality-standards-cnc.html" class="read-more">Read More</a>
-                    </div>
+                    <p>CNC machining tolerances are critical specifications that define the acceptable variation in a part's dimensions. Understanding tolerances is essential for ensuring parts meet functional requirements while avoiding unnecessary costs associated with over-specification.</p>
                     
-                    <div class="post-card">
-                        <div class="post-image">
-                            <img src="https://images.unsplash.com/photo-1556157382-97eda2f9e946?ixlib=rb-4.0.3" alt="Materials">
-                        </div>
-                        <div class="post-meta">
-                            <span>May 12, 2025</span>
-                            <span>Category: Materials</span>
-                        </div>
-                        <h3><a href="titanium-inconel-cnc-machining.html">Working with Advanced Materials: Titanium and Inconel Machining</a></h3>
-                        <div class="post-excerpt">
-                            <p>Titanium and Inconel alloys present unique challenges in CNC machining due to their strength and heat resistance. Our specialized techniques and tooling ensure optimal results with these demanding materials...</p>
-                        </div>
-                        <a href="titanium-inconel-cnc-machining.html" class="read-more">Read More</a>
-                    </div>
+                    <h3>What Are CNC Machining Tolerances?</h3>
+                    <p>Tolerances define the allowable deviation from a nominal dimension. For example, a dimension specified as 10±0.1mm means the actual dimension can range from 9.9mm to 10.1mm and still be considered acceptable.</p>
                     
-                    <div class="post-card">
-                        <div class="post-meta">
-                            <span>April 30, 2025</span>
-                            <span>Category: Company News</span>
-                        </div>
-                        <h3><a href="partcnc-facility-expansion.html">PartCNC Expands Facility to Meet Growing Demand</a></h3>
-                        <div class="post-excerpt">
-                            <p>We're excited to announce the expansion of our manufacturing facility with 20 additional CNC machines and expanded warehouse space. This investment will allow us to serve more customers with faster turnaround times...</p>
-                        </div>
-                        <a href="partcnc-facility-expansion.html" class="read-more">Read More</a>
-                    </div>
+                    <h3>Standard Tolerances vs. Custom Tolerances</h3>
+                    <p>Most CNC machining shops work to standard tolerances, typically ±0.1mm for general machining. When tighter tolerances are required, they must be specifically indicated on the drawing and may involve additional costs.</p>
                     
-                    <div class="pagination">
-                        <a href="blog.html" class="active">1</a>
-                        <a href="blog.html">Next &raquo;</a>
-                    </div>
+                    <h3>Factors Affecting Tolerances</h3>
+                    <ul>
+                        <li><strong>Material Properties:</strong> Different materials have varying machinability and stability characteristics</li>
+                        <li><strong>Part Geometry:</strong> Complex geometries may be more challenging to hold tight tolerances</li>
+                        <li><strong>Machine Capabilities:</strong> Different machines offer varying levels of precision</li>
+                        <li><strong>Environmental Conditions:</strong> Temperature and humidity can affect dimensional stability</li>
+                        <li><strong>Measurement Methods:</strong> The accuracy of measurement tools affects tolerance verification</li>
+                    </ul>
+                    
+                    <h3>Common CNC Machining Tolerances</h3>
+                    <ol>
+                        <li><strong>General Tolerances:</strong> ±0.1mm for most standard machining operations</li>
+                        <li><strong>Precision Tolerances:</strong> ±0.05mm for higher precision requirements</li>
+                        <li><strong>High-Precision Tolerances:</strong> ±0.01mm to ±0.02mm for critical features</li>
+                        <li><strong>Ultra-Precision Tolerances:</strong> ±0.005mm or tighter for specialized applications</li>
+                    </ol>
+                    
+                    <h3>Specifying Tolerances Effectively</h3>
+                    <p>When specifying tolerances, consider the following best practices:</p>
+                    
+                    <ul>
+                        <li>Only specify tight tolerances where functionally necessary</li>
+                        <li>Use general tolerances for non-critical dimensions</li>
+                        <li>Consider the manufacturing process capabilities</li>
+                        <li>Account for cumulative tolerances in assemblies</li>
+                        <li>Specify measurement methods and conditions</li>
+                    </ul>
+                    
+                    <h3>Cost Implications of Tolerances</h3>
+                    <p>Tighter tolerances generally increase manufacturing costs due to:</p>
+                    
+                    <ul>
+                        <li>Specialized tooling and setup requirements</li>
+                        <li>Increased inspection and measurement time</li>
+                        <li>Higher rejection rates for out-of-tolerance parts</li>
+                        <li>Need for more precise machinery</li>
+                        <li>Additional process controls and documentation</li>
+                    </ul>
+                    
+                    <h3>Our Capabilities</h3>
+                    <p>At PartCNC, we offer various tolerance ranges to meet your project requirements:</p>
+                    
+                    <ul>
+                        <li><strong>Standard:</strong> ±0.1mm for general machining</li>
+                        <li><strong>Precision:</strong> ±0.02mm for critical components</li>
+                        <li><strong>High-Precision:</strong> ±0.005mm for aerospace and medical applications</li>
+                    </ul>
+                    
+                    <h3>Conclusion</h3>
+                    <p>Properly specified tolerances balance functional requirements with manufacturing costs. By understanding the principles of tolerancing and working with experienced manufacturers, you can ensure your parts meet requirements while optimizing costs.</p>
                 </div>
                 
                 <div class="sidebar">
@@ -444,18 +438,10 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="section" style="background: #f8f9fa;">
-        <div class="container" style="text-align: center;">
-            <h2>Stay Updated with Our Latest Insights</h2>
-            <p style="margin-bottom: 2rem;">Subscribe to our newsletter for the latest articles and industry news</p>
-            <form style="max-width: 500px; margin: 0 auto; display: flex;">
-                <input type="email" placeholder="Your email address" style="flex: 1; padding: 0.75rem; border: 1px solid #ddd; border-radius: 4px 0 0 4px;">
-                <button type="submit" style="background: #3498db; color: white; border: none; padding: 0 1.5rem; border-radius: 0 4px 4px 0; cursor: pointer;">Subscribe</button>
-            </form>
+            
+            <div class="back-link">
+                <a href="blog.html" class="btn">Back to Blog</a>
+            </div>
         </div>
     </section>
 

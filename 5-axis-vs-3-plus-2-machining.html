@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5-Axis vs 3+2 Axis Machining: Key Differences | PartCNC Blog</title>
+    <meta name="description" content="Learn the differences between 5-axis and 3+2 axis CNC machining, their applications, advantages, and when to use each method for your manufacturing projects.">
+    <meta name="keywords" content="5-axis machining, 3+2 machining, CNC machining, manufacturing technology">
+    <link rel="canonical" href="https://www.partcnc.cn/5-axis-vs-3-plus-2-machining.html">
+    
+    <meta property="og:title" content="5-Axis vs 3+2 Axis Machining: Key Differences | PartCNC Blog">
+    <meta property="og:description" content="Learn the differences between 5-axis and 3+2 axis CNC machining, their applications, advantages, and when to use each method for your manufacturing projects.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.partcnc.cn/5-axis-vs-3-plus-2-machining.html">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #3498db;
+        }
+        
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1633662590170-71c0-8fc8685d4a94?ixlib=rb-4.0.3') no-repeat center center/cover;
+            height: 60vh;
+            color: white;
+            display: flex;
+            align-items: center;
+            margin-top: 70px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .article-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .article-meta {
+            display: flex;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .article-meta span {
+            margin-right: 1rem;
+        }
+        
+        .article-content h2 {
+            color: #2c3e50;
+            margin: 2rem 0 1rem;
+        }
+        
+        .article-content h3 {
+            color: #2c3e50;
+            margin: 1.5rem 0 1rem;
+        }
+        
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+        
+        .article-content li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .article-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin: 1.5rem 0;
+        }
+        
+        .back-link {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #2980b9;
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: #2c3e50;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                padding: 2rem 0;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 1rem 0;
+            }
+            
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .menu-toggle.active span:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            
+            .menu-toggle.active span:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G5F3L6W2VW"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-G5F3L6W2VW');
+    </script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">PartCNC</div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="cases.html">Case Studies</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>5-Axis vs 3+2 Axis Machining: Key Differences</h1>
+                <p>Understanding the differences between 5-axis and 3+2 machining approaches</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Content -->
+    <section class="section">
+        <div class="container">
+            <div class="article-content">
+                <div class="article-meta">
+                    <span>Published: June 5, 2025</span>
+                    <span>Category: Technology</span>
+                    <span>Author: PartCNC Engineering Team</span>
+                </div>
+                
+                <p>In the world of precision manufacturing, CNC machining capabilities continue to evolve, with multi-axis machining becoming increasingly important for complex part production. Two commonly discussed approaches are 5-axis continuous machining and 3+2 axis machining. While both methods involve positioning the workpiece at various angles, they differ significantly in execution and application.</p>
+                
+                <h2>What is 5-Axis Machining?</h2>
+                
+                <p>5-axis machining refers to the ability of a machine tool to move a part or cutting tool along five different axes simultaneously. In a typical configuration, this includes the standard X, Y, and Z linear axes, plus two rotational axes (A and B). This simultaneous movement allows for continuous adjustment of the cutting tool's orientation relative to the workpiece during the machining process.</p>
+                
+                <h2>What is 3+2 Axis Machining?</h2>
+                
+                <p>3+2 axis machining, also known as positional 5-axis machining, uses the two rotational axes to position the part at a specific angle, after which the cutting tool operates along the standard 3 linear axes (X, Y, Z) without further adjustment of the rotational axes during that particular cut. Essentially, it's like performing 3-axis machining at multiple fixed angles.</p>
+                
+                <h2>Key Differences Between 5-Axis and 3+2 Machining</h2>
+                
+                <h3>Tool Path Complexity</h3>
+                <p>5-axis machining allows for complex, continuous tool paths that can follow intricate geometries with optimal tool engagement. 3+2 machining requires breaking down the part into separate machining operations at different angles.</p>
+                
+                <h3>Surface Finish Quality</h3>
+                <p>In 5-axis machining, the tool can maintain optimal cutting angles throughout the machining process, resulting in better surface finishes. With 3+2 machining, visible transitions between different machining positions may occur, requiring additional finishing operations.</p>
+                
+                <h3>Machining Time</h3>
+                <p>While 5-axis machining can reduce overall setup time by completing complex geometries in a single setup, the actual cutting time may be longer due to the complex tool paths. 3+2 machining can be faster for certain operations but may require multiple setups.</p>
+                
+                <h3>Machine Requirements</h3>
+                <p>5-axis machines are generally more complex and expensive than 3+2 capable machines. They also require more advanced CAM software and skilled operators to program and operate effectively.</p>
+                
+                <h2>Applications and Use Cases</h2>
+                
+                <h3>When to Use 5-Axis Machining</h3>
+                <ul>
+                    <li>Parts with complex, curved geometries requiring continuous tool contact</li>
+                    <li>Applications where surface finish is critical</li>
+                    <li>Aerospace components with intricate internal channels</li>
+                    <li>Medical implants with complex organic shapes</li>
+                    <li>Prototyping where minimizing setups is crucial</li>
+                </ul>
+                
+                <h3>When to Use 3+2 Machining</h3>
+                <ul>
+                    <li>Parts with features that can be machined from fixed angles</li>
+                    <li>When high accuracy is needed but complex tool paths are not required</li>
+                    <li>Budget-conscious projects where equipment costs matter</li>
+                    <li>Parts with primarily prismatic features with some angular elements</li>
+                    <li>High-volume production where cycle time is critical</li>
+                </ul>
+                
+                <h2>PartCNC Capabilities</h2>
+                
+                <p>At PartCNC, we offer both 5-axis continuous machining and 3+2 machining capabilities to ensure we select the optimal approach for your specific project requirements. Our engineering team evaluates each project to determine the most cost-effective and efficient machining strategy while maintaining our commitment to precision and quality.</p>
+                
+                <p>Our fleet includes advanced 5-axis machining centers capable of handling the most complex geometries, as well as high-speed 3-axis machines with rotary tables for 3+2 applications. This flexibility allows us to provide competitive pricing while maintaining exceptional quality standards.</p>
+                
+                <div class="back-link">
+                    <a href="blog.html" class="btn">Back to Blog</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 PartCNC. All rights reserved.</p>
+            <p>High Precision CNC Machining Services | <a href="mailto:info@partcnc.cn" style="color: #3498db;">info@partcnc.cn</a></p>
+        </div>
+    </footer>
+    
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenu.addEventListener('click', function() {
+            mobileMenu.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PartCNC Expands Facility to Meet Growing Demand | PartCNC Blog</title>
+    <meta name="description" content="We're excited to announce the expansion of our manufacturing facility with 20 additional CNC machines and expanded warehouse space. This investment will allow us to serve more customers with faster turnaround times.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #3498db;
+        }
+        
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3') no-repeat center center/cover;
+            height: 60vh;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .post-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .post-content {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .post-meta {
+            display: flex;
+            margin-bottom: 2rem;
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+        
+        .meta-item {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .meta-item strong {
+            display: block;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        
+        .post-content h3 {
+            color: #2c3e50;
+            margin: 2rem 0 1rem;
+        }
+        
+        .post-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .post-content ul, .post-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+        
+        .post-content li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .sidebar {
+            flex: 1;
+        }
+        
+        .sidebar-widget {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 5px;
+            margin-bottom: 2rem;
+        }
+        
+        .sidebar-widget h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .sidebar-widget ul {
+            list-style: none;
+        }
+        
+        .sidebar-widget li {
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .sidebar-widget li:last-child {
+            border-bottom: none;
+        }
+        
+        .sidebar-widget a {
+            color: #333;
+            text-decoration: none;
+        }
+        
+        .sidebar-widget a:hover {
+            color: #3498db;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: background 0.3s;
+            margin-top: 1rem;
+        }
+        
+        .btn:hover {
+            background: #2980b9;
+        }
+        
+        .back-link {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: #2c3e50;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                padding: 2rem 0;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 1rem 0;
+            }
+            
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .menu-toggle.active span:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            
+            .menu-toggle.active span:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .post-details {
+                flex-direction: column;
+            }
+        }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G5F3L6W2VW"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-G5F3L6W2VW');
+    </script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">PartCNC</div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="cases.html">Case Studies</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>PartCNC Expands Facility to Meet Growing Demand</h1>
+                <p>Investing in our future to better serve our customers</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Post Content -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Company News</h2>
+                <p>Exciting developments in our manufacturing capabilities</p>
+            </div>
+            
+            <div class="post-details">
+                <div class="post-content">
+                    <div class="post-meta">
+                        <div class="meta-item">
+                            <strong>Published</strong>
+                            <span>April 30, 2025</span>
+                        </div>
+                        <div class="meta-item">
+                            <strong>Category</strong>
+                            <span>Company News</span>
+                        </div>
+                        <div class="meta-item">
+                            <strong>Author</strong>
+                            <span>Management Team</span>
+                        </div>
+                    </div>
+                    
+                    <p>We're excited to announce a significant expansion of our manufacturing facility, representing our largest investment in company history. This expansion includes the addition of 20 new CNC machines and a 50% increase in warehouse space, positioning us to better serve our growing customer base with faster turnaround times and increased capacity.</p>
+                    
+                    <h3>Investment in Advanced Technology</h3>
+                    <p>The expansion adds state-of-the-art CNC machining equipment to our production floor:</p>
+                    
+                    <ul>
+                        <li><strong>10 new 5-axis machining centers</strong> for complex geometries and reduced setup times</li>
+                        <li><strong>5 high-precision turning centers</strong> for cylindrical components with tight tolerances</li>
+                        <li><strong>3 multi-tasking machines</strong> capable of milling and turning in a single setup</li>
+                        <li><strong>2 EDM machines</strong> for precision die sinking and wire cutting applications</li>
+                    </ul>
+                    
+                    <p>All new equipment features the latest in CNC technology, including advanced control systems, automatic tool changers, and integrated probing systems for in-process inspection.</p>
+                    
+                    <h3>Warehouse Expansion</h3>
+                    <p>Our warehouse space has been expanded by 5,000 square feet to accommodate:</p>
+                    
+                    <ul>
+                        <li>Increased raw material inventory for faster job starts</li>
+                        <li>Expanded finished goods storage for just-in-time delivery</li>
+                        <li>Dedicated area for customer-supplied materials</li>
+                        <li>Climate-controlled storage for sensitive materials</li>
+                        <li>Improved material flow and organization systems</li>
+                    </ul>
+                    
+                    <h3>Enhanced Capabilities</h3>
+                    <p>This expansion significantly enhances our production capabilities:</p>
+                    
+                    <ul>
+                        <li><strong>Capacity Increase:</strong> Overall production capacity increased by 40%</li>
+                        <li><strong>Lead Time Reduction:</strong> Average lead times reduced by 25%</li>
+                        <li><strong>Size Range:</strong> Ability to handle larger parts up to 1000mm x 600mm x 500mm</li>
+                        <li><strong>Material Flexibility:</strong> Enhanced capability to work with exotic alloys and specialized materials</li>
+                    </ul>
+                    
+                    <h3>Quality and Certification</h3>
+                    <p>All new equipment is integrated into our existing ISO 9001:2015 and AS9100D quality management systems. We've also expanded our quality control lab with additional measuring equipment:</p>
+                    
+                    <ul>
+                        <li>New coordinate measuring machine (CMM) with increased measuring range</li>
+                        <li>Additional optical comparators for profile inspection</li>
+                        <li>Expanded surface finish measurement capabilities</li>
+                        <li>New vision measuring system for small, intricate parts</li>
+                    </ul>
+                    
+                    <h3>Team Growth</h3>
+                    <p>To support this expansion, we're also growing our team:</p>
+                    
+                    <ul>
+                        <li>20 new manufacturing positions including setup technicians and operators</li>
+                        <li>5 additional quality control inspectors</li>
+                        <li>3 new engineering positions for process development</li>
+                        <li>Expanded training programs for all team members</li>
+                    </ul>
+                    
+                    <h3>Customer Benefits</h3>
+                    <p>This investment directly benefits our customers through:</p>
+                    
+                    <ol>
+                        <li><strong>Faster Turnaround Times:</strong> Increased capacity allows for shorter lead times on standard and rush orders</li>
+                        <li><strong>Improved Flexibility:</strong> More equipment options mean better matching of jobs to optimal processes</li>
+                        <li><strong>Enhanced Quality:</strong> New equipment with integrated inspection capabilities ensures consistent quality</li>
+                        <li><strong>Greater Capacity:</strong> Ability to take on larger volume projects and multiple jobs simultaneously</li>
+                        <li><strong>Advanced Technology:</strong> Access to the latest machining capabilities for complex requirements</li>
+                    </ol>
+                    
+                    <h3>Looking Forward</h3>
+                    <p>This expansion represents our commitment to growth and customer satisfaction. As demand for precision CNC machining continues to grow across industries, we're positioning PartCNC to be a long-term partner for our customers' manufacturing needs.</p>
+                    
+                    <p>We're excited about the opportunities this expansion creates and look forward to serving both our existing customers and new clients with enhanced capabilities and improved service levels.</p>
+                    
+                    <p>For current customers, this expansion means:</p>
+                    
+                    <ul>
+                        <li>No disruption to existing orders during the expansion phase</li>
+                        <li>Improved on-time delivery performance</li>
+                        <li>Ability to handle increased volume requirements</li>
+                        <li>Access to additional machining technologies</li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar">
+                    <div class="sidebar-widget">
+                        <h3>Categories</h3>
+                        <ul>
+                            <li><a href="#">Technology (12)</a></li>
+                            <li><a href="#">Quality Control (8)</a></li>
+                            <li><a href="#">Materials (15)</a></li>
+                            <li><a href="#">Industry News (7)</a></li>
+                            <li><a href="#">Company News (5)</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3>Popular Posts</h3>
+                        <ul>
+                            <li><a href="#">Understanding CNC Machining Tolerances</a></li>
+                            <li><a href="#">5-Axis vs 3+2 Axis Machining</a></li>
+                            <li><a href="#">Surface Finish Guide for CNC Parts</a></li>
+                            <li><a href="#">Choosing the Right CNC Material</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="back-link">
+                <a href="blog.html" class="btn">Back to Blog</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 PartCNC. All rights reserved.</p>
+            <p>High Precision CNC Machining Services | <a href="mailto:info@partcnc.cn" style="color: #3498db;">info@partcnc.cn</a></p>
+        </div>
+    </footer>
+    
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenu.addEventListener('click', function() {
+            mobileMenu.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

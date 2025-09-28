@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surface Finish Guide for CNC Parts | PartCNC Blog</title>
+    <meta name="description" content="Complete guide to CNC machining surface finishes, including roughness standards, measurement methods, and how to specify the right finish for your parts.">
+    <meta name="keywords" content="CNC surface finish, surface roughness, Ra value, CNC machining, part finishing">
+    <link rel="canonical" href="https://www.partcnc.cn/surface-finish-guide.html">
+    
+    <meta property="og:title" content="Surface Finish Guide for CNC Parts | PartCNC Blog">
+    <meta property="og:description" content="Complete guide to CNC machining surface finishes, including roughness standards, measurement methods, and how to specify the right finish for your parts.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.partcnc.cn/surface-finish-guide.html">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #3498db;
+        }
+        
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?ixlib=rb-4.0.3') no-repeat center center/cover;
+            height: 60vh;
+            color: white;
+            display: flex;
+            align-items: center;
+            margin-top: 70px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .article-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .article-meta {
+            display: flex;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .article-meta span {
+            margin-right: 1rem;
+        }
+        
+        .article-content h2 {
+            color: #2c3e50;
+            margin: 2rem 0 1rem;
+        }
+        
+        .article-content h3 {
+            color: #2c3e50;
+            margin: 1.5rem 0 1rem;
+        }
+        
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+        
+        .article-content li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .article-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin: 1.5rem 0;
+        }
+        
+        .back-link {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #2980b9;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: #2c3e50;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                padding: 2rem 0;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 1rem 0;
+            }
+            
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .menu-toggle.active span:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            
+            .menu-toggle.active span:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G5F3L6W2VW"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-G5F3L6W2VW');
+    </script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">PartCNC</div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="cases.html">Case Studies</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Surface Finish Guide for CNC Parts</h1>
+                <p>Understanding surface roughness and how to specify the right finish for your components</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Content -->
+    <section class="section">
+        <div class="container">
+            <div class="article-content">
+                <div class="article-meta">
+                    <span>Published: May 22, 2025</span>
+                    <span>Category: Technology</span>
+                    <span>Author: PartCNC Quality Team</span>
+                </div>
+                
+                <p>Surface finish is a critical specification in CNC machining that significantly impacts part functionality, aesthetics, and performance. Understanding surface roughness parameters and how to properly specify them can help ensure your parts meet functional requirements while avoiding unnecessary costs.</p>
+                
+                <h2>What is Surface Finish?</h2>
+                
+                <p>Surface finish, also known as surface texture or surface roughness, refers to the deviations in the direction of the normal vector from the ideal geometric surface. These deviations create a profile with peaks and valleys that affect how a part interacts with its environment or mating components.</p>
+                
+                <h2>Surface Roughness Parameters</h2>
+                
+                <p>The most commonly used parameter for measuring surface roughness is Ra (arithmetical mean roughness), which represents the average of the absolute values of the roughness profile ordinates.</p>
+                
+                <table>
+                    <tr>
+                        <th>Ra Value (µm)</th>
+                        <th>Ra Value (µin)</th>
+                        <th>Surface Description</th>
+                        <th>Typical Applications</th>
+                    </tr>
+                    <tr>
+                        <td>0.025</td>
+                        <td>1</td>
+                        <td>Mirror finish</td>
+                        <td>Optical components, gauge blocks</td>
+                    </tr>
+                    <tr>
+                        <td>0.1</td>
+                        <td>4</td>
+                        <td>Very fine finish</td>
+                        <td>Hydraulic components, precision bearings</td>
+                    </tr>
+                    <tr>
+                        <td>0.2</td>
+                        <td>8</td>
+                        <td>Fine finish</td>
+                        <td>Shafts, pistons, sealing surfaces</td>
+                    </tr>
+                    <tr>
+                        <td>0.4</td>
+                        <td>16</td>
+                        <td>Semi-fine finish</td>
+                        <td>Machine tool ways, bearing journals</td>
+                    </tr>
+                    <tr>
+                        <td>0.8</td>
+                        <td>32</td>
+                        <td>Standard finish</td>
+                        <td>General engineering components</td>
+                    </tr>
+                    <tr>
+                        <td>1.6</td>
+                        <td>63</td>
+                        <td>Standard machined finish</td>
+                        <td>Most machined parts</td>
+                    </tr>
+                    <tr>
+                        <td>3.2</td>
+                        <td>125</td>
+                        <td>Rough machined finish</td>
+                        <td>Structural components, non-critical parts</td>
+                    </tr>
+                    <tr>
+                        <td>6.3</td>
+                        <td>250</td>
+                        <td>Very rough finish</td>
+                        <td>Castings, forgings, rough cuts</td>
+                    </tr>
+                </table>
+                
+                <h2>Factors Affecting Surface Finish</h2>
+                
+                <h3>Material Properties</h3>
+                <p>Different materials respond differently to machining processes. Harder materials like titanium or hardened steel typically produce better surface finishes than softer materials like aluminum. Material grain structure and homogeneity also play important roles.</p>
+                
+                <h3>Cutting Parameters</h3>
+                <p>Speed, feed, and depth of cut directly influence surface finish. Generally, higher speeds and lower feeds produce better finishes, but these must be balanced with productivity and tool life considerations.</p>
+                
+                <h3>Tool Geometry</h3>
+                <p>The cutting tool's nose radius, rake angle, and edge condition significantly affect surface finish. Larger nose radii typically produce better finishes, while worn or damaged tools will degrade surface quality.</p>
+                
+                <h3>Machine Rigidity</h3>
+                <p>Vibrations and deflections in the machine-tool-workpiece system can deteriorate surface finish. High-quality CNC machines with good rigidity and damping characteristics are essential for achieving fine finishes.</p>
+                
+                <h2>CNC Machining Surface Finish Capabilities</h2>
+                
+                <h3>Milling</h3>
+                <p>CNC milling can achieve surface finishes ranging from 6.3 Ra to 0.2 Ra depending on the material and process parameters. Finishing operations with small stepovers and appropriate tooling can produce excellent results.</p>
+                
+                <h3>Turning</h3>
+                <p>Turning operations typically produce better surface finishes than milling, with capabilities ranging from 3.2 Ra to 0.1 Ra. The continuous cutting action and ability to use specialized finishing tools contribute to this advantage.</p>
+                
+                <h3>Grinding</h3>
+                <p>For applications requiring very fine finishes (0.2 Ra and better), grinding operations may be necessary. CNC grinding can achieve surface finishes as fine as 0.025 Ra in specialized applications.</p>
+                
+                <h2>How to Specify Surface Finish Requirements</h2>
+                
+                <ol>
+                    <li><strong>Identify Critical Surfaces:</strong> Determine which surfaces require specific finish requirements based on functional needs such as sealing, wear resistance, or aesthetics.</li>
+                    <li><strong>Select Appropriate Ra Values:</strong> Choose Ra values that meet functional requirements without over-specifying. Tighter tolerances increase costs significantly.</li>
+                    <li><strong>Consider Material and Process:</strong> Ensure your specified finish is achievable with the selected material and machining process.</li>
+                    <li><strong>Use Standard Symbols:</strong> Apply proper surface finish symbols per ISO or ASME standards on engineering drawings.</li>
+                </ol>
+                
+                <h2>PartCNC Surface Finishing Services</h2>
+                
+                <p>At PartCNC, we offer comprehensive surface finishing capabilities to meet a wide range of requirements. Our standard machining processes typically achieve 1.6 Ra finishes, with specialized finishing operations available for requirements as fine as 0.1 Ra.</p>
+                
+                <p>Our quality control team uses advanced surface profilometers to verify finish requirements, ensuring consistent delivery of parts that meet specified surface texture parameters. We work closely with customers to understand functional requirements and recommend cost-effective finishing solutions.</p>
+                
+                <div class="back-link">
+                    <a href="blog.html" class="btn">Back to Blog</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 PartCNC. All rights reserved.</p>
+            <p>High Precision CNC Machining Services | <a href="mailto:info@partcnc.cn" style="color: #3498db;">info@partcnc.cn</a></p>
+        </div>
+    </footer>
+    
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenu.addEventListener('click', function() {
+            mobileMenu.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
