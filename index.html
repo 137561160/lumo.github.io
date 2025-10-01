@@ -101,46 +101,27 @@
         }
         
         .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3') no-repeat center center/cover;
             height: 100vh;
             color: white;
             display: flex;
             align-items: center;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-slideshow {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-        
-        .slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-        }
-        
-        .slide.active {
-            opacity: 1;
         }
         
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
-            position: relative;
-            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
         }
         
         .btn {
@@ -286,14 +267,6 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-slideshow">
-            <div class="slide active" style="background-image: url('img/main6.jpg')"></div>
-            <div class="slide" style="background-image: url('img/main5.jpg')"></div>
-            <div class="slide" style="background-image: url('img/main4.jpg')"></div>
-            <div class="slide" style="background-image: url('img/main3.jpg')"></div>
-            <div class="slide" style="background-image: url('img/main2.jpg')"></div>
-            <div class="slide" style="background-image: url('img/main1.jpg')"></div>
-        </div>
         <div class="container">
             <div class="hero-content">
                 <h1>High Precision CNC Machining Services</h1>
@@ -359,31 +332,21 @@
     </footer>
     
     <script>
-    // Hero section slideshow
-    document.addEventListener('DOMContentLoaded', function() {
-        const slides = document.querySelectorAll('.slide');
-        let currentSlide = 0;
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
         
-        function showSlide(index) {
-            // Remove active class from all slides
-            slides.forEach(slide => slide.classList.remove('active'));
-            
-            // Add active class to current slide
-            slides[index].classList.add('active');
-        }
+        mobileMenu.addEventListener('click', function() {
+            mobileMenu.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
         
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        }
-        
-        // Change slide every 3 seconds
-        setInterval(nextSlide, 3000);
-        
-        // Show first slide immediately
-        showSlide(currentSlide);
-    });
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
     </script>
 </body>
-
 </html>
